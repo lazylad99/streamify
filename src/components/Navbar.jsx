@@ -7,6 +7,7 @@ import SearchBar from "./SearchBar";
 const Navbar = () => (
   <Stack
     direction="row"
+    justifyContent="center"
     alignItems="center"
     p={2}
     sx={{
@@ -18,6 +19,7 @@ const Navbar = () => (
   >
     <Link to="/" style={{ display: "flex", alignItems: "center" }}>
       <img src={logo1} alt="logo" height={45} className="logo" />
+      <h1 className="nav-title">Streamify</h1>
     </Link>
     <SearchBar />
   </Stack>

@@ -15,7 +15,7 @@ import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 export const logo = '../../public/streamify.jpg'
 
 export const categories = [
-    { name: 'Home', icon: <HomeIcon />, },
+    { name: 'New', icon: <HomeIcon />, },
     { name: 'Coding', icon: <CodeIcon />, },
     { name: 'ReactJS', icon: <CodeIcon />, },
     { name: 'NextJS', icon: <CodeIcon />, },

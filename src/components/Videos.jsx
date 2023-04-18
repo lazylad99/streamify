@@ -2,6 +2,8 @@ import { Box, Stack } from "@mui/material";
 import { VideoCard, ChannelCard } from "./";
 
 const Videos = ({ videos, direction }) => {
+  if (!videos?.length) return "Loading...";
+
   return (
     <Stack
       direction={direction || "row"}
@@ -9,17 +11,20 @@ const Videos = ({ videos, direction }) => {
       justifyContent="start"
       gap={2}
     >
-      {videos &&
-        videos.map(({ id, snippet }) => (
-          <Box key={id.videoId}>
-            {id?.videoId && (
-              <VideoCard key={id?.videoId} id={id} snippet={snippet} />
-            )}
-            {id?.channelId && (
-              <ChannelCard id={id.channelId} snippet={snippet} />
-            )}
-          </Box>
-        ))}
+      {videos.map(({ id, snippet }, idx) => (
+        <Box key={idx}>
+          {id?.videoId && (
+            <VideoCard key={id?.videoId} id={id} snippet={snippet} />
+          )}
+          {id?.channelId && (
+            <ChannelCard
+              key={id?.channelId}
+              id={id.channelId}
+              snippet={snippet}
+            />
+          )}
+        </Box>
+      ))}
     </Stack>
   );
 };

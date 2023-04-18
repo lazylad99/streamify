@@ -24,6 +24,7 @@ const ChannelCard = ({ id, snippet, stats, marginTop }) => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            alignItems: "center",
             textAlign: "center",
             color: "#fff",
           }}

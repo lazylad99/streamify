@@ -4,7 +4,7 @@ import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { Sidebar, Videos } from "./";
 
 const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Home");
+  const [selectedCategory, setSelectedCategory] = useState("New");
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const Feed = () => {
           sx={{ color: "white" }}
           style={{ fontFamily: "Montserrat Alternates, sans-serif" }}
         >
-          {selectedCategory}
+          {selectedCategory === "New" ? "Trending" : selectedCategory}
           <span style={{ color: "#F31503" }}> videos</span>
         </Typography>
 

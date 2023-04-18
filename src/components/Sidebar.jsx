@@ -38,7 +38,7 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
                     : "1px 1px 2px grey",
               }}
             >
-              {category.name}
+              {category.name === "New" ? "Home" : category.name}
             </span>
           </button>
         );

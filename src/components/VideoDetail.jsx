@@ -30,9 +30,16 @@ const VideoDetail = () => {
   if (!videos) return "Loading...";
 
   const {
-    snippet: { title, channelId, channelTitle },
+    snippet: { title, channelId, channelTitle, description, publishedAt },
     statistics: { viewCount, likeCount },
   } = videoDetail;
+
+  const dateStr = publishedAt;
+
+  const date = new Date(dateStr);
+  const options = { month: "long", day: "numeric", year: "numeric" };
+
+  const formattedDate = date.toLocaleDateString("en-US", options);
 
   return (
     <Box minHeight="95vh">
@@ -40,7 +47,6 @@ const VideoDetail = () => {
         <Box
           sx={{
             width: "100%",
-            position: "sticky",
             top: "86px",
             p: "0px 15px",
           }}
@@ -48,6 +54,7 @@ const VideoDetail = () => {
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${id}`}
             className="react-player"
+            height="400px"
             controls
           />
           <div
@@ -81,12 +88,19 @@ const VideoDetail = () => {
               </Link>
               <Stack direction="row" gap="20px" alignItems="center">
                 <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {parseInt(viewCount).toLocaleString()} views
-                </Typography>
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
                   {parseInt(likeCount).toLocaleString()} likes
                 </Typography>
               </Stack>
+            </Stack>
+            <Stack sx={{ color: "#fff" }}>
+              <Typography variant="subtitle1" sx={{ opacity: 0.9 }}>
+                <p>
+                  {" "}
+                  {parseInt(viewCount).toLocaleString()} views{"    "}
+                  {formattedDate}
+                </p>
+                <p> {description}</p>
+              </Typography>
             </Stack>
           </div>
         </Box>
