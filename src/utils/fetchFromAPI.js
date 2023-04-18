@@ -1,12 +1,10 @@
 import axios from "axios";
 
-export function searchVideos(query) {
+export function fetchFromAPI(params, query) {
     const options = {
         method: 'GET',
-        url: 'https://youtube-v31.p.rapidapi.com/search',
+        url: `https://youtube-v31.p.rapidapi.com/${params}?${query}`,
         params: {
-            q: query,
-            part: 'snippet,id',
             maxResults: '50'
         },
         headers: {

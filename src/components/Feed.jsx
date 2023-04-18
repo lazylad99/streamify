@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import { searchVideos } from "../utils/fetchFromAPI";
+import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { Sidebar, Videos } from "./";
 
 const Feed = () => {
@@ -8,7 +8,9 @@ const Feed = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    searchVideos(selectedCategory)
+    const params = "search";
+    const query = `q=${selectedCategory}&part=snippet,id`;
+    fetchFromAPI(params, query)
       .then((data) => {
         setVideos(data.items);
       })
