@@ -2,8 +2,16 @@
 Streamify is a YouTube clone that leverages the power of the YouTube Data API v3 from Rapid API to allow users to watch and search for videos, as well as interact with the content creators. This application is built using React and Node.js, and is based on the tutorial series by the JavaScript Mastery YouTube channel.
 
 ## Features
+<<<<<<< HEAD
 Video viewing: users can watch videos from YouTube and interact with them through likes,views.
 Search functionality: users can search for videos using keywords and filters.
+=======
+User authentication: users can sign up and log in to the application to access all functionalities.
+Video viewing: users can watch videos from YouTube and interact with them through likes, dislikes, and comments.
+Search functionality: users can search for videos using keywords and filters.
+User profiles: users can create and customize their profiles and see their own playlists.
+Subscription system: users can subscribe to content creators' channels and receive notifications when they upload new videos.
+>>>>>>> 3cc1d17497a4c61b85c5b8908cca02635757b4a8
 ## Getting started
 ### Prerequisites
 Node.js installed on your machine
